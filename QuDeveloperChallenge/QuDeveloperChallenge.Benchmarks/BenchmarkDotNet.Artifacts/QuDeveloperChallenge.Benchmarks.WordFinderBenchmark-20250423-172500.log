@@ -1,0 +1,164 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 1 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true /p:IntermediateOutputPath="C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge.Benchmarks\bin\Release\net8.0\6c8fda21-4724-4aa3-8216-6eeebc56e553\obj\Release\net8.0/" /p:OutDir="C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge.Benchmarks\bin\Release\net8.0\6c8fda21-4724-4aa3-8216-6eeebc56e553\bin\Release\net8.0/" /p:OutputPath="C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge.Benchmarks\bin\Release\net8.0\6c8fda21-4724-4aa3-8216-6eeebc56e553\bin\Release\net8.0/" in C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge.Benchmarks\bin\Release\net8.0\6c8fda21-4724-4aa3-8216-6eeebc56e553
+// command took 0.74 sec and exited with 0
+// start dotnet  build -c Release --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true /p:IntermediateOutputPath="C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge.Benchmarks\bin\Release\net8.0\6c8fda21-4724-4aa3-8216-6eeebc56e553\obj\Release\net8.0/" /p:OutDir="C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge.Benchmarks\bin\Release\net8.0\6c8fda21-4724-4aa3-8216-6eeebc56e553\bin\Release\net8.0/" /p:OutputPath="C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge.Benchmarks\bin\Release\net8.0\6c8fda21-4724-4aa3-8216-6eeebc56e553\bin\Release\net8.0/" --output "C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge.Benchmarks\bin\Release\net8.0\6c8fda21-4724-4aa3-8216-6eeebc56e553\bin\Release\net8.0/" in C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge.Benchmarks\bin\Release\net8.0\6c8fda21-4724-4aa3-8216-6eeebc56e553
+// command took 4.6 sec and exited with 0
+// ***** Done, took 00:00:05 (5.43 sec)   *****
+// Found 1 benchmarks:
+//   WordFinderBenchmark.FindWords: DefaultJob
+
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// Benchmark: WordFinderBenchmark.FindWords: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet 6c8fda21-4724-4aa3-8216-6eeebc56e553.dll --anonymousPipes 1312 1308 --benchmarkName QuDeveloperChallenge.Benchmarks.WordFinderBenchmark.FindWords --job Default --benchmarkId 0 in C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge.Benchmarks\bin\Release\net8.0\6c8fda21-4724-4aa3-8216-6eeebc56e553\bin\Release\net8.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.14.0
+// Runtime=.NET 8.0.13 (8.0.1325.6609), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT,AvxVnni,SERIALIZE VectorSize=256
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 110700.00 ns, 110.7000 us/op
+WorkloadJitting  1: 1 op, 3987500.00 ns, 3.9875 ms/op
+
+OverheadJitting  2: 16 op, 113900.00 ns, 7.1188 us/op
+WorkloadJitting  2: 16 op, 16234300.00 ns, 1.0146 ms/op
+
+WorkloadPilot    1: 16 op, 9442300.00 ns, 590.1438 us/op
+WorkloadPilot    2: 32 op, 19508100.00 ns, 609.6281 us/op
+WorkloadPilot    3: 64 op, 35769100.00 ns, 558.8922 us/op
+WorkloadPilot    4: 128 op, 70826100.00 ns, 553.3289 us/op
+WorkloadPilot    5: 256 op, 136724000.00 ns, 534.0781 us/op
+WorkloadPilot    6: 512 op, 219269600.00 ns, 428.2609 us/op
+WorkloadPilot    7: 1024 op, 416361700.00 ns, 406.6032 us/op
+WorkloadPilot    8: 2048 op, 779404300.00 ns, 380.5685 us/op
+
+OverheadWarmup   1: 2048 op, 4600.00 ns, 2.2461 ns/op
+OverheadWarmup   2: 2048 op, 4000.00 ns, 1.9531 ns/op
+OverheadWarmup   3: 2048 op, 4100.00 ns, 2.0020 ns/op
+OverheadWarmup   4: 2048 op, 4000.00 ns, 1.9531 ns/op
+OverheadWarmup   5: 2048 op, 4100.00 ns, 2.0020 ns/op
+OverheadWarmup   6: 2048 op, 4100.00 ns, 2.0020 ns/op
+
+OverheadActual   1: 2048 op, 4100.00 ns, 2.0020 ns/op
+OverheadActual   2: 2048 op, 3800.00 ns, 1.8555 ns/op
+OverheadActual   3: 2048 op, 4000.00 ns, 1.9531 ns/op
+OverheadActual   4: 2048 op, 4200.00 ns, 2.0508 ns/op
+OverheadActual   5: 2048 op, 3800.00 ns, 1.8555 ns/op
+OverheadActual   6: 2048 op, 3700.00 ns, 1.8066 ns/op
+OverheadActual   7: 2048 op, 3700.00 ns, 1.8066 ns/op
+OverheadActual   8: 2048 op, 4100.00 ns, 2.0020 ns/op
+OverheadActual   9: 2048 op, 4000.00 ns, 1.9531 ns/op
+OverheadActual  10: 2048 op, 4200.00 ns, 2.0508 ns/op
+OverheadActual  11: 2048 op, 4000.00 ns, 1.9531 ns/op
+OverheadActual  12: 2048 op, 4200.00 ns, 2.0508 ns/op
+OverheadActual  13: 2048 op, 4100.00 ns, 2.0020 ns/op
+OverheadActual  14: 2048 op, 4200.00 ns, 2.0508 ns/op
+OverheadActual  15: 2048 op, 4200.00 ns, 2.0508 ns/op
+
+WorkloadWarmup   1: 2048 op, 774942900.00 ns, 378.3901 us/op
+WorkloadWarmup   2: 2048 op, 780395800.00 ns, 381.0526 us/op
+WorkloadWarmup   3: 2048 op, 765483100.00 ns, 373.7710 us/op
+WorkloadWarmup   4: 2048 op, 774455700.00 ns, 378.1522 us/op
+WorkloadWarmup   5: 2048 op, 777826000.00 ns, 379.7979 us/op
+WorkloadWarmup   6: 2048 op, 787196700.00 ns, 384.3734 us/op
+WorkloadWarmup   7: 2048 op, 772954800.00 ns, 377.4193 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 2048 op, 791548900.00 ns, 386.4985 us/op
+WorkloadActual   2: 2048 op, 796946000.00 ns, 389.1338 us/op
+WorkloadActual   3: 2048 op, 764241000.00 ns, 373.1646 us/op
+WorkloadActual   4: 2048 op, 766665800.00 ns, 374.3485 us/op
+WorkloadActual   5: 2048 op, 773509800.00 ns, 377.6903 us/op
+WorkloadActual   6: 2048 op, 775987400.00 ns, 378.9001 us/op
+WorkloadActual   7: 2048 op, 770768300.00 ns, 376.3517 us/op
+WorkloadActual   8: 2048 op, 768357400.00 ns, 375.1745 us/op
+WorkloadActual   9: 2048 op, 768265200.00 ns, 375.1295 us/op
+WorkloadActual  10: 2048 op, 773411500.00 ns, 377.6423 us/op
+WorkloadActual  11: 2048 op, 764753700.00 ns, 373.4149 us/op
+WorkloadActual  12: 2048 op, 770916300.00 ns, 376.4240 us/op
+WorkloadActual  13: 2048 op, 770102600.00 ns, 376.0267 us/op
+WorkloadActual  14: 2048 op, 764976600.00 ns, 373.5237 us/op
+WorkloadActual  15: 2048 op, 762510800.00 ns, 372.3197 us/op
+
+// AfterActualRun
+WorkloadResult   1: 2048 op, 764236900.00 ns, 373.1625 us/op
+WorkloadResult   2: 2048 op, 766661700.00 ns, 374.3465 us/op
+WorkloadResult   3: 2048 op, 773505700.00 ns, 377.6883 us/op
+WorkloadResult   4: 2048 op, 775983300.00 ns, 378.8981 us/op
+WorkloadResult   5: 2048 op, 770764200.00 ns, 376.3497 us/op
+WorkloadResult   6: 2048 op, 768353300.00 ns, 375.1725 us/op
+WorkloadResult   7: 2048 op, 768261100.00 ns, 375.1275 us/op
+WorkloadResult   8: 2048 op, 773407400.00 ns, 377.6403 us/op
+WorkloadResult   9: 2048 op, 764749600.00 ns, 373.4129 us/op
+WorkloadResult  10: 2048 op, 770912200.00 ns, 376.4220 us/op
+WorkloadResult  11: 2048 op, 770098500.00 ns, 376.0247 us/op
+WorkloadResult  12: 2048 op, 764972500.00 ns, 373.5217 us/op
+WorkloadResult  13: 2048 op, 762506700.00 ns, 372.3177 us/op
+
+// AfterAll
+// Benchmark Process 28016 has exited with code 0.
+
+Mean = 375.391 μs, StdErr = 0.555 μs (0.15%), N = 13, StdDev = 2.001 μs
+Min = 372.318 μs, Q1 = 373.522 μs, Median = 375.173 μs, Q3 = 376.422 μs, Max = 378.898 μs
+IQR = 2.900 μs, LowerFence = 369.171 μs, UpperFence = 380.772 μs
+ConfidenceInterval = [372.995 μs; 377.787 μs] (CI 99.9%), Margin = 2.396 μs (0.64% of Mean)
+Skewness = 0.13, Kurtosis = 1.68, MValue = 2
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2025-04-23 17:25 (0h 0m from now) **
+Successfully reverted power plan (GUID: 381b4222-f694-41f0-9685-ff5bb260df2e FriendlyName: Balanced)
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\QuDeveloperChallenge.Benchmarks.WordFinderBenchmark-report.csv
+  BenchmarkDotNet.Artifacts\results\QuDeveloperChallenge.Benchmarks.WordFinderBenchmark-report-github.md
+  BenchmarkDotNet.Artifacts\results\QuDeveloperChallenge.Benchmarks.WordFinderBenchmark-report.html
+
+// * Detailed results *
+WordFinderBenchmark.FindWords: DefaultJob
+Runtime = .NET 8.0.13 (8.0.1325.6609), X64 RyuJIT AVX2; GC = Concurrent Workstation
+Mean = 375.391 μs, StdErr = 0.555 μs (0.15%), N = 13, StdDev = 2.001 μs
+Min = 372.318 μs, Q1 = 373.522 μs, Median = 375.173 μs, Q3 = 376.422 μs, Max = 378.898 μs
+IQR = 2.900 μs, LowerFence = 369.171 μs, UpperFence = 380.772 μs
+ConfidenceInterval = [372.995 μs; 377.787 μs] (CI 99.9%), Margin = 2.396 μs (0.64% of Mean)
+Skewness = 0.13, Kurtosis = 1.68, MValue = 2
+-------------------- Histogram --------------------
+[371.201 μs ; 380.015 μs) | @@@@@@@@@@@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.3775)
+Unknown processor
+.NET SDK 9.0.200
+  [Host]     : .NET 8.0.13 (8.0.1325.6609), X64 RyuJIT AVX2
+  DefaultJob : .NET 8.0.13 (8.0.1325.6609), X64 RyuJIT AVX2
+
+
+| Method    | Mean     | Error   | StdDev  |
+|---------- |---------:|--------:|--------:|
+| FindWords | 375.4 μs | 2.40 μs | 2.00 μs |
+
+// * Hints *
+Outliers
+  WordFinderBenchmark.FindWords: Default -> 2 outliers were removed (386.50 μs, 389.13 μs)
+
+// * Legends *
+  Mean   : Arithmetic mean of all measurements
+  Error  : Half of 99.9% confidence interval
+  StdDev : Standard deviation of all measurements
+  1 μs   : 1 Microsecond (0.000001 sec)
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:00:19 (19.36 sec), executed benchmarks: 1
+
+Global total time: 00:00:25 (25.18 sec), executed benchmarks: 1
+// * Artifacts cleanup *
+Artifacts cleanup is finished

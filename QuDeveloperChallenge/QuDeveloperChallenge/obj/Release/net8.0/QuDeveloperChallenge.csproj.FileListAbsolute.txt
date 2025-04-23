@@ -1,0 +1,15 @@
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\bin\Release\net8.0\QuDeveloperChallenge.exe
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\bin\Release\net8.0\QuDeveloperChallenge.deps.json
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\bin\Release\net8.0\QuDeveloperChallenge.runtimeconfig.json
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\bin\Release\net8.0\QuDeveloperChallenge.dll
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\bin\Release\net8.0\QuDeveloperChallenge.pdb
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\obj\Release\net8.0\QuDeveloperChallenge.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\obj\Release\net8.0\QuDeveloperChallenge.AssemblyInfoInputs.cache
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\obj\Release\net8.0\QuDeveloperChallenge.AssemblyInfo.cs
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\obj\Release\net8.0\QuDeveloperChallenge.csproj.CoreCompileInputs.cache
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\obj\Release\net8.0\QuDeveloperChallenge.sourcelink.json
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\obj\Release\net8.0\QuDeveloperChallenge.dll
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\obj\Release\net8.0\refint\QuDeveloperChallenge.dll
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\obj\Release\net8.0\QuDeveloperChallenge.pdb
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\obj\Release\net8.0\QuDeveloperChallenge.genruntimeconfig.cache
+C:\Users\danie\source\repos\QuDeveloperChallenge\QuDeveloperChallenge\QuDeveloperChallenge\obj\Release\net8.0\ref\QuDeveloperChallenge.dll

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuDeveloperChallenge", "QuD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuDeveloperChallenge.Tests", "QuDeveloperChallenge.Tests\QuDeveloperChallenge.Tests.csproj", "{3FC6673F-24C9-49A0-9957-74978220054A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuDeveloperChallenge.Benchmarks", "QuDeveloperChallenge.Benchmarks\QuDeveloperChallenge.Benchmarks.csproj", "{AF54C163-E1C0-4121-AD21-6999A0C3C26E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3FC6673F-24C9-49A0-9957-74978220054A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FC6673F-24C9-49A0-9957-74978220054A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FC6673F-24C9-49A0-9957-74978220054A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF54C163-E1C0-4121-AD21-6999A0C3C26E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF54C163-E1C0-4121-AD21-6999A0C3C26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF54C163-E1C0-4121-AD21-6999A0C3C26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF54C163-E1C0-4121-AD21-6999A0C3C26E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,7 +4,7 @@ namespace QuDeveloperChallenge
 {
     public class WordFinder 
     {
-        private readonly Dictionary<char, int[]> chartDictionary;
+        private readonly Dictionary<char, HashSet<int>> chartDictionary;
         private readonly List<(string, int)> wordsCount;
         private readonly int columns;
 
@@ -20,7 +20,7 @@ namespace QuDeveloperChallenge
             chartDictionary = matrix.SelectMany((row, rIndex) => row.Select((character, cIndex) => new { Character = character, Position = rIndex * columns + cIndex }))
                 .GroupBy(c => c.Character, c => c.Position)
                 // Coverting the matrix to this Dictionary will help to find each leter faster, ordering the position array will allow us to apply Array.BinarySearch 
-                .ToDictionary(c => c.Key, c => c.Order().ToArray());
+                .ToDictionary(c => c.Key, c => c.Order().ToHashSet());
 
             wordsCount = [];
         }
@@ -32,7 +32,7 @@ namespace QuDeveloperChallenge
 
             foreach (var word in uniqueWords.Where(w => !string.IsNullOrWhiteSpace(w)))
             {
-                var letters = word.ToArray();
+                var letters = word.AsSpan();
 
                 // Looking for the first letter of the current word in the dictionary. If it is not, we procced with the following
                 var firstLetter = letters[0];
@@ -43,21 +43,21 @@ namespace QuDeveloperChallenge
 
                 int wordCount = 0;
 
-
                 // If the word that we are looking have only one letter, we count its ocurrences. Otherwise we check followings letters in letters array (letters.Skip(1))
-                if (letters.Count() == 1 && letterPositions.Count() >=1)
+                if (letters.Length == 1 && letterPositions.Count >=1)
                 {
-                    wordCount += letterPositions.Count();
+                    wordCount += letterPositions.Count;
                 }
                 else
                 {
                     // We will call Explore recursive method foreach ocurrence of firsts letters, and we will do for 4 posibles directions...
                     foreach (var initialPosition in letterPositions)
                     {
-                        wordCount += Explore(letters.Skip(1), initialPosition, 1, 0); //to the right for x=1
-                        wordCount += Explore(letters.Skip(1), initialPosition, 0, 1); //upwards for y=1
-                        wordCount += Explore(letters.Skip(1), initialPosition, -1, 0); //to the left for x=-1
-                        wordCount += Explore(letters.Skip(1), initialPosition, 0, -1); //downwards for y=-1
+                        var slice = letters[1..];
+                        wordCount += Explore(slice, initialPosition, 1, 0); //to the right for x=1
+                        wordCount += Explore(slice, initialPosition, 0, 1); //upwards for y=1
+                        wordCount += Explore(slice, initialPosition, -1, 0); //to the left for x=-1
+                        wordCount += Explore(slice, initialPosition, 0, -1); //downwards for y=-1
                     }
                 }
 
@@ -72,26 +72,27 @@ namespace QuDeveloperChallenge
                 .Select(w => w.Item1);
         }
 
-        private int Explore(IEnumerable<char> letters, int currentPosition, int x, int y)
+        private int Explore(ReadOnlySpan<char> letters, int currentPosition, int x, int y)
         {            
             // Letter to search
-            char searchedLetter = letters.First();
+            char searchedLetter = letters[0];
 
+            // Getting all positions for a searched letter and put it into position HashSet
             // If the letter isn't in the whole matrix, I won't keep looking, I won't find it
-            if (!chartDictionary.TryGetValue(searchedLetter, out int[]? positions))
+            if (!chartDictionary.TryGetValue(searchedLetter, out HashSet<int>? positions))
                 return 0;
 
             // Apply the direction vector to get expected position
             int expectedPosition = currentPosition + x + y * columns;
 
-            // If binary search returns less than 0, the position was not found in the list of letter positions.
-            if (Array.BinarySearch(positions, expectedPosition) < 0)
+            // Checking if the expected position is in the hashset will be very performant.
+            if (!positions.Contains(expectedPosition))
                 return 0;
 
-            var followingSearch = letters.Skip(1);
+            var followingSearch = letters[1..];
 
             // Closing condition (when there are no more letters left to search for)
-            if (!followingSearch.Any())
+            if (followingSearch.Length == 0)
                 return 1;
 
             // If we are exploring horizontally, we don't have to jump from one row to another, 

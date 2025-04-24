@@ -1,21 +1,42 @@
-# Word Finder Challenge
+﻿# Word Finder Challenge
 
 ## Objective
 This project addresses the Word Finder developer challenge, where the goal is to find and return the top 10 most frequent words from a word stream that are found in a given matrix of characters. The words can appear in horizontal (left to right) or vertical (top to bottom) directions.
 
 ## Highlights
 - Written in C# (.NET)
-- Efficient search using precomputed character position indexing and binary search
+- High-performance search using character position indexing with `HashSet<int>` for O(1) lookups
+- Zero-allocation substring checks using `ReadOnlySpan<char>`
 - Handles matrix size up to 64x64
 - Ignores repeated words in the word stream (uniqueness enforced before search)
 - Includes a console interface for custom input or using mock data
 
 ## Design & Performance Considerations
 
-- **Matrix Indexing**: During construction, the matrix is transformed into a `Dictionary<char, int[]>` where each character maps to a sorted array of linear positions in the matrix. This significantly accelerates search by allowing binary search to validate each step.
-- **Recursive Search**: The algorithm checks 4 directions (right, left, down, up) recursively, maintaining boundary constraints and validating each character via `Array.BinarySearch`.
-- **Memory Efficiency**: By using `IEnumerable<string>` and avoiding unnecessary copies or allocations, the implementation stays performant.
-- **Stream Filtering**: Words are de-duplicated using `Distinct()` before processing.
+- **Matrix Indexing via HashSet**
+  During construction, the matrix is transformed into a `Dictionary<char, HashSet<int>>` where each character maps to a set of its positions (as flattened 1D indices) in the matrix.
+  This significantly accelerates search:
+
+  - `HashSet<int>` enables **constant-time lookup** for verifying if a letter is present at a specific position.
+  - This replaces the original `Array.BinarySearch` approach with a faster and simpler lookup strategy.
+
+- **Recursive Search in 4 Directions**
+  For each starting position of the first letter, the algorithm recursively explores four directions:
+
+  - Right →
+  - Left ←
+  - Down ↓
+  - Up ↑
+    While ensuring boundaries are respected (no wrapping across matrix edges).
+
+- **Zero-Allocation String Slicing**\
+  The implementation uses `ReadOnlySpan<char>` for efficient, allocation-free manipulation of word substrings during recursive traversal.
+
+- **Word Stream Filtering**
+  Before search begins, input words are filtered via `.Distinct()` to ensure uniqueness and avoid redundant computation.
+
+- **Memory Efficiency**
+  The use of `IEnumerable<string>` and streaming results minimizes memory usage and improves scalability for large input sets.
 
 ## Usage
 
@@ -61,8 +82,6 @@ wind
 ## Future Improvements
 
 - Add support for diagonal word searches
-- Unit testing using xUnit or NUnit
-- Benchmarking performance with large matrices and word streams
 - UI wrapper or API exposure
 
 ## Author

@@ -1,1 +1,6 @@
 .vs/
+
+**/bin/
+**/obj/
+/QuDeveloperChallenge/QuDeveloperChallenge.Benchmarks/obj/Debug/net8.0/QuDeveloperChallenge.Benchmarks.AssemblyInfo.cs
+/QuDeveloperChallenge/QuDeveloperChallenge.Benchmarks/obj/Debug/net8.0/QuDeveloperChallenge.Benchmarks.AssemblyInfoInputs.cache

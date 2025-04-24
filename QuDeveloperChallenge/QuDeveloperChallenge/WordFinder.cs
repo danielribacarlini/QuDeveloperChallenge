@@ -16,10 +16,10 @@ namespace QuDeveloperChallenge
             
             columns = matrix.First().Length;
 
-            // Calculating all ocurrences of each leter and its position. This will help to find each word in a more afiicient way
+            // Calculating all ocurrences of each leter and its position. This will help to find each word in a more efficient way
             chartDictionary = matrix.SelectMany((row, rIndex) => row.Select((character, cIndex) => new { Character = character, Position = rIndex * columns + cIndex }))
                 .GroupBy(c => c.Character, c => c.Position)
-                // Coverting the matrix to this Dictionary will help to find each leter faster, ordering the position array will allow us to apply Array.BinarySearch 
+                // Coverting the matrix to this Dictionary will help to find each letter faster, using a hashset insted of an array is going to be much more performant.
                 .ToDictionary(c => c.Key, c => c.Order().ToHashSet());
 
             wordsCount = [];
@@ -43,7 +43,7 @@ namespace QuDeveloperChallenge
 
                 int wordCount = 0;
 
-                // If the word that we are looking have only one letter, we count its ocurrences. Otherwise we check followings letters in letters array (letters.Skip(1))
+                // If the word that we are looking have only one letter, we count its ocurrences. Otherwise we check followings letters in letters array (letters[1..])
                 if (letters.Length == 1 && letterPositions.Count >=1)
                 {
                     wordCount += letterPositions.Count;
